@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--作成者 樗木-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.kidsl.CanvasView
+        android:id="@+id/canvas_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@id/canvas_view"
+        android:layout_alignParentRight="true"
+        android:text="CLEAR"
+        />
+
+    <TextView
+        android:id="@+id/kouho_view"
+        android:layout_width="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
