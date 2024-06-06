@@ -35,6 +35,10 @@ public class CanvasView extends View {
         paint.setAntiAlias(true);
         paint.setStrokeWidth(10);
 
+
+
+
+
     }
     //描画メソッド
     @Override
