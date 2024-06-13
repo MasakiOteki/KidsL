@@ -2,4 +2,7 @@
 plugins {
     id 'com.android.application' version '8.0.2' apply false
     id 'com.android.library' version '8.0.2' apply false
+
+    //Python使えるようにするライブラリ(chaquo)を追加 樗木
+    id 'com.chaquo.python' version "15.0.1" apply false
 }

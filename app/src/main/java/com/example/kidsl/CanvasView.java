@@ -6,6 +6,7 @@
 package com.example.kidsl;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import android.graphics.Path;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -23,6 +25,8 @@ public class CanvasView extends View {
 
     private final ArrayList<Path> pathList;
     private final Paint paint;
+
+
 
     public CanvasView(Context context, AttributeSet attrs){
         super(context, attrs);
@@ -34,7 +38,6 @@ public class CanvasView extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(10);
-
 
 
 
@@ -83,6 +86,7 @@ public class CanvasView extends View {
         draw(canvas);
         return bitmap;
     }
+
 
 
 

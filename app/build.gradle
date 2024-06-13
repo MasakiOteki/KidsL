@@ -1,19 +1,38 @@
 plugins {
     id 'com.android.application'
+
+    //Python使えるようにするライブラリ(chaquo)を追加 樗木
+    id 'com.chaquo.python'
 }
 
 android {
     namespace 'com.example.kidsl'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.kidsl"
-        minSdk 26
-        targetSdk 33
+        minSdk 25
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //ようわからんけどドキュメントに書いてあったわ 樗木
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+
+        //Pythonのライブラリを使えるようにするためにいる 樗木
+        python {
+            pip {
+//                install "numpy"
+                //chaquoがpydanticのバージョン2以上に対応してないから2より小さいものをinstall
+                install "pydantic<2"
+                install "openai"
+
+            }
+        }
     }
 
     buildTypes {
@@ -23,14 +42,27 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_10
+        targetCompatibility JavaVersion.VERSION_1_10
     }
 }
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    //OkHttpのライブラリを使えるようにする 樗木
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    //そらの魔法。kotlinのパッケージのバージョンを統合してくれる。樗木
+    constraints{
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0"){
+            because("kotlin-stdlib-jdk7 is now a part pf kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0"){
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'

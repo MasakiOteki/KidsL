@@ -21,6 +21,16 @@
         android:text="CLEAR"
         />
 
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@id/canvas_view"
+        android:layout_alignParentLeft="true"
+        android:text="SEARCH"
+        />
+
+
     <TextView
         android:id="@+id/kouho_view"
         android:layout_width="150dp"
