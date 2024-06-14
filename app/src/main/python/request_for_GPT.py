@@ -2,7 +2,7 @@ import openai
 from openai import OpenAI
 
 def gpt(word,extract):
-    apikey = 'sk-proj-PfSf6pXgbAoXbDhOFp5YT3BlbkFJw14uGN2lxuKYI0rSWEJP'
+    apikey = '################'
 
     # APIキーの設定
     openai.api_key = apikey
